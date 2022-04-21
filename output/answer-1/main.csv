@@ -1,0 +1,5 @@
+grocery.groupby('product_description')['price'].mean()
+grocery["price_new"] = grocery['price'].fillna(
+   grocery.groupby('product_description')['price'].transform("mean")
+)
+grocery[grocery["price"].isna()].head()
